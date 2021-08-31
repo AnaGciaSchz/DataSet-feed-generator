@@ -10,20 +10,27 @@ exports.createFeed = function () {
             
             if(productNames.length >0){
             for(productName in productNames){//[ 'Golden-Delicious', 'Granny-Smith', 'Pink-Lady', ... ]
-            writeInDocument(directories[directory],folders[folder],productNames[productName]);
+            writeInDocumentProductName(directories[directory],folders[folder],productNames[productName]);
         }
         }//if
         else{
-            writeInDocument(directories[directory],folders[folder],folders[folder]);
+            writeInDocumentNoProductName(directories[directory],folders[folder]);
         }
     }
     }
 return "done";
 }
 
-function writeInDocument(directory,folder,productName){
+function writeInDocumentProductName(directory,folder,productName){
     var name = productName;
     var category = "Grocery";
-    var image = "https://raw.githubusercontent.com/marcusklasson/GroceryStoreDataset/master/dataset/iconic-images-and-descriptions/"+directory+"/"+folder+"/"+name+"/"+name+".jpg";
+    var image = "https://raw.githubusercontent.com/marcusklasson/GroceryStoreDataset/master/dataset/iconic-images-and-descriptions/"+directory+"/"+folder+"/"+name+"/"+name+"_Iconic.jpg";
+    fw.write(name+"\t"+category+"\t"+image+"\n");
+}
+
+function writeInDocumentNoProductName(directory,folder){
+    var name = folder;
+    var category = "Grocery";
+    var image = "https://github.com/marcusklasson/GroceryStoreDataset/blob/master/dataset/iconic-images-and-descriptions/"+directory+"/"+folder+"/"+folder+"_Iconic.jpg";
     fw.write(name+"\t"+category+"\t"+image+"\n");
 }
