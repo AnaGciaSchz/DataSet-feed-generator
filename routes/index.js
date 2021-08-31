@@ -3,6 +3,6 @@ var router = express.Router();
 
 const createUniqueFeedController = require("../controller/CreateUniqueFeedController");
 
-router.get('/', writeFeedController.create);
+router.get('/', createUniqueFeedController.create);
 
 module.exports = router;
