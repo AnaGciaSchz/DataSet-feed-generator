@@ -18,7 +18,6 @@ exports.createFeed = function () {
         }
     }
     }
-return "done";
 }
 
 function writeInDocumentProductName(directory,folder,productName){

@@ -3,3 +3,7 @@ exports.getDirectories = function(path) {
       return fs.statSync(path+'/'+file).isDirectory();
     });
   }
+
+  exports.getFileNames = function(path){
+    return fs.readdirSync(path);
+  }
