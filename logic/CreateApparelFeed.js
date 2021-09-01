@@ -11,8 +11,8 @@ exports.createFeed = function () {
     }
 }
 function writeInDocument(directory, fileName){
-    var name = directory;
+    var name = directory.replace("_"," ");
     var category = "Fashion";
     var image = "resources/apparelDress/"+directory+"/"+fileName;
-    fw.write(name+"\t"+category+"\t"+image+"\n");
+    fw.write(",\n{\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
 }

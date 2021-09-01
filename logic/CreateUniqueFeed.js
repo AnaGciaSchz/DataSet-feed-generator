@@ -3,8 +3,9 @@ var createApparelFeed = require("../logic/CreateApparelFeed");
 var fw = require ("../inout/FileWriter")
 
 exports.createFeed = async ()=> {
-fw.write("Name\tCategory\tImages\n");
+fw.write("[\n");
 createGroceryFeed.createFeed();
 createApparelFeed.createFeed();
+setTimeout(() => {fw.write("\n]");; }, 2000);
 return "done";
 }
