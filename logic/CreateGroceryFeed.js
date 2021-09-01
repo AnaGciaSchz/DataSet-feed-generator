@@ -1,5 +1,6 @@
-var fr = require ("../inout/FolderReader")
-var fw = require ("../inout/FileWriter")
+var fr = require ("../inout/FolderReader");
+var fw = require ("../inout/FileWriter");
+var uniqid = require('uniqid'); 
 
 exports.createFeed = function () {
     var firstLine = true;
@@ -32,9 +33,9 @@ function writeInDocumentProductName(directory,folder,productName,firstLine){
     var category = "Grocery";
     var image = "https://raw.githubusercontent.com/marcusklasson/GroceryStoreDataset/master/dataset/iconic-images-and-descriptions/"+directory+"/"+folder+"/"+name+"/"+name+"_Iconic.jpg";
     if(firstLine){
-        fw.write("{\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
+        fw.write("{\nid:"+uniqid()+",\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
     }else{
-        fw.write(",\n{\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
+        fw.write(",\n{\nid:"+uniqid()+",\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
     }
 }
 
@@ -43,8 +44,8 @@ function writeInDocumentNoProductName(directory,folder,firstLine){
     var category = "Grocery";
     var image = "https://raw.githubusercontent.com/marcusklasson/GroceryStoreDataset/master/dataset/iconic-images-and-descriptions/"+directory+"/"+folder+"/"+folder+"_Iconic.jpg";
     if(firstLine){
-        fw.write("{\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
+        fw.write("{\nid:"+uniqid()+",\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
     }else{
-        fw.write(",\n{\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
+        fw.write(",\n{\nid:"+uniqid()+",\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
     }
 }

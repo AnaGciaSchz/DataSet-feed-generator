@@ -1,5 +1,6 @@
-var fr = require ("../inout/FolderReader")
-var fw = require ("../inout/FileWriter")
+var fr = require ("../inout/FolderReader");
+var fw = require ("../inout/FileWriter");
+var uniqid = require('uniqid'); 
 
 exports.createFeed = function () {
     var directories = fr.getDirectories("resources/apparelDress")
@@ -14,5 +15,5 @@ function writeInDocument(directory, fileName){
     var name = directory.replace("_"," ");
     var category = "Fashion";
     var image = "resources/apparelDress/"+directory+"/"+fileName;
-    fw.write(",\n{\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
+    fw.write(",\n{\nid:"+uniqid()+",\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
 }
