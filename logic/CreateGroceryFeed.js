@@ -41,7 +41,7 @@ function writeInDocumentProductName(directory,folder,productName,firstLine){
 function writeInDocumentNoProductName(directory,folder,firstLine){
     var name = folder;
     var category = "Grocery";
-    var image = "https://github.com/marcusklasson/GroceryStoreDataset/blob/master/dataset/iconic-images-and-descriptions/"+directory+"/"+folder+"/"+folder+"_Iconic.jpg";
+    var image = "https://raw.githubusercontent.com/marcusklasson/GroceryStoreDataset/master/dataset/iconic-images-and-descriptions/"+directory+"/"+folder+"/"+folder+"_Iconic.jpg";
     if(firstLine){
         fw.write("{\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
     }else{
