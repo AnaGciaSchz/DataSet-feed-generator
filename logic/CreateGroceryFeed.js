@@ -33,9 +33,9 @@ function writeInDocumentProductName(directory,folder,productName,firstLine){
     var category = "Grocery";
     var image = "https://raw.githubusercontent.com/marcusklasson/GroceryStoreDataset/master/dataset/iconic-images-and-descriptions/"+directory+"/"+folder+"/"+name+"/"+name+"_Iconic.jpg";
     if(firstLine){
-        fw.write("{\nid:"+uniqid()+",\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
+        fw.write("{\n\"id\":\""+uniqid()+"\",\n\"name\":\""+name+"\",\n\"category\":\""+category+"\",\n\"image\":\""+image+"\"\n}");
     }else{
-        fw.write(",\n{\nid:"+uniqid()+",\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
+        fw.write(",\n{\n\"id\":\""+uniqid()+"\",\n\"name\":\""+name+"\",\n\"category\":\""+category+"\",\n\"image\":\""+image+"\"\n}");
     }
 }
 
@@ -44,8 +44,8 @@ function writeInDocumentNoProductName(directory,folder,firstLine){
     var category = "Grocery";
     var image = "https://raw.githubusercontent.com/marcusklasson/GroceryStoreDataset/master/dataset/iconic-images-and-descriptions/"+directory+"/"+folder+"/"+folder+"_Iconic.jpg";
     if(firstLine){
-        fw.write("{\nid:"+uniqid()+",\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
+        fw.write("{\n\"id\":\""+uniqid()+"\",\n\"name\":\""+name+"\",\n\"category\":\""+category+"\",\n\"image\":\""+image+"\"\n}");
     }else{
-        fw.write(",\n{\nid:"+uniqid()+",\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
+        fw.write(",\n{\n\"id\":\""+uniqid()+"\",\n\"name\":\""+name+"\",\n\"category\":\""+category+"\",\n\"image\":\""+image+"\"\n}");
     }
 }

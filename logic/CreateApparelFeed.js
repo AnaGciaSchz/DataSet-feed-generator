@@ -15,5 +15,5 @@ function writeInDocument(directory, fileName){
     var name = directory.replace("_"," ");
     var category = "Fashion";
     var image = "resources/apparelDress/"+directory+"/"+fileName;
-    fw.write(",\n{\nid:"+uniqid()+",\nname:"+name+",\ncategory:"+category+",\nimage:"+image+"\n}");
+    fw.write(",\n{\n\"id\":\""+uniqid()+"\",\n\"name\":\""+name+"\",\n\"category\":\""+category+"\",\n\"image\":\""+image+"\"\n}");
 }

@@ -15,7 +15,7 @@ And execute:
 ```
 npm start
 ```
-Last, go to ``http://localhost:3000/`` to start executing the program and generating new lines on the Feed.txt
+Last, go to ``http://localhost:3000/`` to start executing the program and generating new lines on the GroceryStore.json
 
 
 <!-- CONTACT -->
